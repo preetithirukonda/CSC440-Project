@@ -22,66 +22,63 @@ The database enforces realistic constraints such as non overlapping formulation 
 ## Project Files
 1. schema.sql
 Contains:
-Table definitions
-Primary/foreign keys
-CHECK constraints
-Triggers
-Stored procedure definitions
-Relationship tables
+- Table definitions
+- Primary/foreign keys
+- CHECK constraints
+- Triggers
+- Stored procedure definitions
+- Relationship tables
 
 
 This file must be executed first.
 
 2. queries.sql 
-Contains valid sample INSERT statements for:
-Manufacturers
-Suppliers
-Categories
-Ingredients (atomic + compound)
-Products
-Recipes (with correct versioning)
-
-
-Formulations (non-overlapping effective dates)
-Ingredient batches
-Product batches
-SUPPLIED_BY, CONTAIN_MATERIALS, and REQUIRES tables
+- Contains valid sample INSERT statements for:
+- Manufacturers
+- Suppliers
+- Categories
+- Ingredients (atomic + compound)
+- Products
+- Recipes (with correct versioning)
+- Formulations (non-overlapping effective dates)
+- Ingredient batches
+- Product batches
+- SUPPLIED_BY, CONTAIN_MATERIALS, and REQUIRES tables
 
 All data adheres to constraints defined in schema.sql.
 
 3. /src/ — Source Code
 Includes Python source code demonstrating:
-Database connection
-Executing stored procedures
-Running CRUD operations
-Retrieving recipe, formulation, and batch data
+- Database connection
+- Executing stored procedures
+- Running CRUD operations
+- Retrieving recipe, formulation, and batch data
 
 Executable:
 main.py 
 
-## Setup Instructions for TAs / Instructors
+## Setup Instructions
 Database Setup
-Open SQL environment MySQL.
+
+1. Open SQL environment MySQL Workbench.
 
 
-Run:
-schema.sql
+2. Run: schema.sql
 
 
-After successful schema creation, run:
-queries.sql
+3. After successful schema creation, run: queries.sql
 
 
 Warning - running the data file before the schema file will cause constraint and trigger errors.
 
 ## Running the Source Code
 
-```pip3 install mysql-connector-python   
-python3 main.py```
-
+```
+pip3 install mysql-connector-python   
+python3 main.py
+```
 
 ## Additional Notes
-
 
 All sample records were tested to ensure no violations of triggers or constraints.
 Only one active recipe exists per product at any time.
