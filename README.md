@@ -51,8 +51,8 @@ All data adheres to constraints defined in schema.sql.
 Includes Python source code demonstrating:
 - Database connection
 - Executing stored procedures
-- Running CRUD operations
-- Retrieving recipe, formulation, and batch data
+- Running operations
+- Retrieving reports
 
 Executable:
 main.py 
@@ -69,7 +69,7 @@ Database Setup
 3. After successful schema creation, run: queries.sql
 
 
-Warning - running the data file before the schema file will cause constraint and trigger errors.
+Warning: running the data file before the schema file will cause constraint and trigger errors.
 
 ## Running the Source Code
 
@@ -77,6 +77,7 @@ Warning - running the data file before the schema file will cause constraint and
 pip3 install mysql-connector-python   
 python3 main.py
 ```
+The CLI will lead you through all project required functionality, following the flow outlined in Appendix A.
 
 ## Additional Notes
 
