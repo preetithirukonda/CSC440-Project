@@ -1,4 +1,4 @@
-# CSC440 Project - Product Formulation & Inventory Management System
+# CSC440 Project - Product Formulation and Inventory Management System
 
 ## Team Members
 - Preeti Thirukonda
@@ -10,10 +10,10 @@
 This project implements a relational database system used to manage:
 - Manufacturers
 - Suppliers
-- Ingredient inventory (atomic + compound)
+- Ingredient inventory (atomic and compound)
 - Products
-- Formulations & recipes (with versioning rules)
-- Product & ingredient batches
+- Formulations and recipes (with versioning rules)
+- Product and ingredient batches
 - Supplier relationships
 - Business rules enforced via triggers and stored procedures
 
@@ -37,10 +37,10 @@ This file must be executed first.
 - Manufacturers
 - Suppliers
 - Categories
-- Ingredients (atomic + compound)
+- Ingredients (atomic and compound)
 - Products
 - Recipes (with correct versioning)
-- Formulations (non-overlapping effective dates)
+- Formulations (non overlapping effective dates)
 - Ingredient batches
 - Product batches
 - SUPPLIED_BY, CONTAIN_MATERIALS, and REQUIRES tables
@@ -73,11 +73,27 @@ Warning: running the data file before the schema file will cause constraint and 
 
 ## Running the Source Code
 
+Make sure to have the following:
+- python 3.8 or above
+- MySQL server already running
+- Database already setup (previous step)
+- Then run the lines below in the terminal
 ```
 pip3 install mysql-connector-python   
 python3 main.py
 ```
+It will prompt you to login to the database:
+- Database host: localhost (or whatever your server is)
+- Database name: csc440_project
+- Username: root (or whatever your username is)
+- Password: password123 (or whatever your password is)
+
 The CLI will lead you through all project required functionality, following the flow outlined in Appendix A.
+
+For logging into roles:
+- Manufacturer: MFG001 or MFG002
+- Supplier: 20 or 21
+- Viewer: no login required
 
 ## Additional Notes
 
