@@ -75,7 +75,7 @@ class InventoryManagementSystem:
   
    def manufacturer_login(self):
        print("\n----------- Manufacturer Login -----------")
-       manufacturer_id = input("Enter Manufacturer ID (e.g., MFG001): ").strip()
+       manufacturer_id = input("Enter Manufacturer ID (ex: MFG001): ").strip()
       
        # verify that the manufacturer exists
        query = "SELECT manufacturer_id, name FROM Manufacturer WHERE name = %s"
@@ -93,7 +93,7 @@ class InventoryManagementSystem:
   
    def supplier_login(self):
        print("\n----------- Supplier Login -----------")
-       supplier_id = input("Enter Supplier ID (e.g., 20, 21): ").strip()
+       supplier_id = input("Enter Supplier ID (ex: 20): ").strip()
       
        # Verify supplier exists
        query = "SELECT supplier_id, name FROM Supplier WHERE supplier_id = %s"
@@ -346,7 +346,7 @@ class InventoryManagementSystem:
        try:
            ingredient_id = int(input("\nIngredient ID: ").strip())
            supplier_id = int(input("Supplier ID: ").strip())
-           batch_id = input("Batch ID (e.g., B0001): ").strip()
+           batch_id = input("Batch ID (ex: B0001): ").strip()
            quantity = float(input("Quantity (oz): ").strip())
            cost_per_unit = float(input("Cost per unit (oz): ").strip())
            expiration_str = input("Expiration Date (YYYY-MM-DD): ").strip()
@@ -431,7 +431,7 @@ class InventoryManagementSystem:
                print(f"Produced units must be a multiple of {product['standard_batch_size']}")
                return
           
-           manufacturer_batch_id = input("Manufacturer Batch ID (e.g., B0901): ").strip()
+           manufacturer_batch_id = input("Manufacturer Batch ID (ex: B0901): ").strip()
            expiration_str = input("Expiration Date (YYYY-MM-DD): ").strip()
            expiration_date = datetime.strptime(expiration_str, "%Y-%m-%d").date()
           
@@ -894,7 +894,7 @@ class InventoryManagementSystem:
       
        try:
            ingredient_id = int(input("\nIngredient ID: ").strip())
-           batch_id = input("Batch ID (e.g., B0001): ").strip()
+           batch_id = input("Batch ID (ex: B0001): ").strip()
            quantity = float(input("Quantity (oz): ").strip())
            cost_per_unit = float(input("Cost per unit (oz): ").strip())
            expiration_str = input("Expiration Date (YYYY-MM-DD): ").strip()
@@ -909,9 +909,8 @@ class InventoryManagementSystem:
           
            # for supplier creating batches we need a manufacturer id
            print("\nNote: Batch will be created for intake by manufacturer.")
-           print("This is a simplified flow for demo purposes.")
           
-           print("\nBatch validated. In production system, manufacturer would complete intake.")
+           print("\nBatch validated.")
           
        except ValueError:
            print("\nInvalid input format.")
